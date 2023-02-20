@@ -1,0 +1,29 @@
+@startuml
+class LoginController
+
+class LogoutController
+
+class RegisterController
+
+class UserService{
+-userDao: UserDao
+-passwordHasher: PasswordHasher
+
++register(user: User)
++hashPassword(user: User)
++verifyPassword(user: User)
++getNameByEmail(email: String)
++getIdByEmail(email: String)
++createCart(id: int)
+
+}
+
+
+
+LoginController o-- UserService
+LogoutController o-- UserService
+RegisterController o-- UserService
+
+UserService -- DaoFactory
+
+@enduml

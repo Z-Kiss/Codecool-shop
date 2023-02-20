@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="copy">
+  <div class="jumbotron text-center">
+    <h3>Contract With Devil</h3>
+    <div>
+      <button><a href="/cart">Cart</a></button>
+      <button th:if="${session.user == null}" id="reg-button">Register</button>
+      <button th:if="${session.user == null}" id="login-button">Login</button>
+      <button th:if="${session.user != null}" id="logout-button">Logout</button>
+    </div>
+    <div th:if="${session.user != null}" >Welcome <span th:text="${session.user}"></span></div>
+  </div>
+
+</div>
+
+</body>
+</html>
